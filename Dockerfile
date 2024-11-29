@@ -25,10 +25,8 @@ WORKDIR /home/rust
 # Ensure cargo's bin directory is in the PATH for the rust user
 ENV PATH="/home/rust/.cargo/bin:${PATH}"
 
+# Install bpf-linker
 RUN cargo install bpf-linker
-
-# This is a placeholder; you can copy your project here later
-# COPY . /home/rust/project
 
 # Set the entrypoint to bash for interactive use
 ENTRYPOINT ["/bin/bash"]
