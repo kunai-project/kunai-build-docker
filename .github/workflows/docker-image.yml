@@ -23,7 +23,7 @@ jobs:
     - name: Checkout Kunai
       uses: actions/checkout@v3
       with:
-        repository: https://github.com/kunai-project/kunai.git
+        repository: kunai-project/kunai
         path: kunai
 
     - name: Build Kunai
