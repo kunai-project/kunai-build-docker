@@ -1,0 +1,35 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '37 13 * * *'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag kunai-build:$(date +%s)
+
+    - name: Checkout Kunai
+      uses: actions/checkout@v3
+      with:
+        repository: https://github.com/kunai-project/kunai.git
+        path: kunai
+
+    - name: Build Kunai
+      run: |
+        set -euxo pipefail
+        docker run -it --name japanese_knife -v $PWD/kunai:/kunai-src -w /kunai-src kunai-build:$(date +%s) cargo xbuild
+        exit_code=$(docker container inspect --format '{{.State.ExitCode}}' japanese_knife)
+        docker container rm japanese_knife
+        exit $exit_code
