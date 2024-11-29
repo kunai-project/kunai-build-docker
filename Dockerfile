@@ -28,6 +28,3 @@ ENV PATH="/home/rust/.cargo/bin:${PATH}"
 # Install bpf-linker
 RUN cargo install bpf-linker
 
-# Set the entrypoint to bash for interactive use
-ENTRYPOINT ["/bin/bash"]
-
