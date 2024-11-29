@@ -4,7 +4,7 @@ This repository contains a way to build kunai on any Linux distribution
 
 # Prepare the docker image
 
-⚠️ The preparation step needs to be run only once to create the docker container we will use
+⚠️ The preparation step needs to be run **only once** to create the docker image we will use
 
 1. `git clone https://github.com/kunai-project/kunai-build-docker.git`
 1. `cd kunai-build-docker`
