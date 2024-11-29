@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kunai-build:$(date +%s)
+      run: docker build . --file Dockerfile --tag kunai-build
 
     - name: Checkout Kunai
       uses: actions/checkout@v3
@@ -29,7 +29,7 @@ jobs:
     - name: Build Kunai
       run: |
         set -euxo pipefail
-        docker run -t --name japanese_knife -v $PWD/kunai:/kunai-src -w /kunai-src kunai-build:$(date +%s) cargo xbuild
+        docker run -t --name japanese_knife -v $PWD/kunai:/kunai-src -w /kunai-src kunai-build cargo xbuild
         exit_code=$(docker container inspect --format '{{.State.ExitCode}}' japanese_knife)
         docker container rm japanese_knife
         exit $exit_code
