@@ -14,5 +14,5 @@ This repository contains a way to build kunai on any Linux distribution
 
 1. `git clone https://github.com/kunai-project/kunai.git`
 1. `docker run -it --rm -v $PWD/kunai:/kunai-src -w /kunai-src kunai-build cargo xbuild --release`
-
+1. Find compiled binary in `./kunai/target` directory
 
