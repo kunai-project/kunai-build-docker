@@ -1,6 +1,6 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kunai-project/kunai-build-docker/docker-image.yml?style=for-the-badge)
 
-This repository contains a way to build kunai on any Linux distribution
+This repository contains a way to build kunai on any OS capable of running docker.
 
 # Prepare the docker image
 
