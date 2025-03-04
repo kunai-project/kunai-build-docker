@@ -5,7 +5,7 @@ This repository contains a way to build kunai on any OS capable of running dock
 # The Easy Way: Using a Readymade Docker Image
 
 1. `git clone https://github.com/kunai-project/kunai.git`
-1. `sudo docker run -it --rm -v /tmp/kunai:/kunai-src -w /kunai-src ghcr.io/kunai-project/kunai-builder cargo xbuild --release`
+1. `sudo docker run -it --rm -v $PWD/kunai:/kunai-src -w /kunai-src ghcr.io/kunai-project/kunai-builder cargo xbuild --release`
 1. Find compiled binary in `./kunai/target` directory
 
 # The Tough Way: Building the Docker Image by Yourself
