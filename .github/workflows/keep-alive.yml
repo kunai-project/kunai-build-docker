@@ -5,6 +5,9 @@ on:
     types: [manual_trigger]
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight
+  push:
+    paths:
+      - '.github/workflows/keep-alive.yml'  # Trigger when this workflow file is modified
 
 jobs:
   keep_alive:
