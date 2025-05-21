@@ -12,6 +12,8 @@ on:
 jobs:
   keep_alive:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Grant write permission to the repository contents
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
