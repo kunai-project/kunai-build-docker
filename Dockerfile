@@ -5,6 +5,8 @@ FROM debian:stable-slim
 RUN <<EOF
 apt-get update
 apt-get install -y curl gcc make clang libbpf-dev git
+# install aarch64 toolchain
+apt install -y gcc-aarch64-linux-gnu
 apt-get clean
 EOF
 
