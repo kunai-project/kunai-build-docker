@@ -52,7 +52,8 @@ rustup target add aarch64-unknown-linux-gnu
 rustup target add aarch64-unknown-linux-musl
 EOF
 
-# Install rust components
+# Install rust components just to prevent
+# component download every time
 RUN <<EOF
 set -e
 rustup component add clippy
