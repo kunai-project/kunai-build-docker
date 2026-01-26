@@ -10,6 +10,9 @@ set -e
 pacman -Sy
 pacman -S --noconfirm curl make clang libbpf git
 
+# install for easy linking
+pacman -S --noconfirm lld
+
 # install x86_64 musl
 pacman -S --noconfirm gcc musl
 
