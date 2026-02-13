@@ -5,6 +5,12 @@ on:
   push:
     branches:
       - main
+  # The container is built for the toolchains used in Kunai
+  # and with the latest (at build time) version of bpf-linker.
+  # Creating a new image every week seems a reasonable trade-off
+  # to ensure up to date build tools
+  schedule:
+    - cron: "37 13 * * 0"
 
 jobs:
   build:
