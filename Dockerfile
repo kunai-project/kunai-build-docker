@@ -8,7 +8,8 @@ set -e
 
 dpkg --add-architecture arm64
 apt update
-apt install -y git clang libbpf-dev lld crossbuild-essential-arm64 musl-tools:arm64
+apt install -y git clang libbpf-dev lld musl-tools
+apt install -y crossbuild-essential-arm64 musl-tools:arm64
 cargo install bpf-linker
 
 rustup toolchain install nightly-x86_64-unknown-linux-gnu
