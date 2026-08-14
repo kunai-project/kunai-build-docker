@@ -10,7 +10,9 @@ dpkg --add-architecture arm64
 apt update
 apt install -y git clang libbpf-dev lld musl-tools
 apt install -y crossbuild-essential-arm64 musl-tools:arm64
-cargo install bpf-linker
+
+curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+cargo binstall -y bpf-linker
 
 rustup toolchain install nightly-x86_64-unknown-linux-gnu
 rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
